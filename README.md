@@ -37,8 +37,8 @@ This example shows the steps of a quantization workflow:
 
 To begin, create a transfer learned MobileNet-v2 using the flower dataset.
 
-During training, replace the convolution layers with custom training layers that perform pseudo-quantization operations on the weights and activations of the layer. For each forward training pass, values at quantization aware convolution layers are quantized and then unquantized. TThis quantizing and unquantizing can be referred to as "boomerang quantization". An example of a boomerang quantization operation would take a value like `365.247` and quantize to an integer representation of `91`. The integer value of `91` is then rescaled back to `364` introducing a quantization error of `-1.247`.
-![Boomerang Quantize](./images/boomerangQuantize.png | width = 250)
+During training, replace the convolution layers with custom training layers that perform pseudo-quantization operations on the weights and activations of the layer. For each forward training pass, values at quantization aware convolution layers are quantized and then unquantized. This quantizing and unquantizing can be referred to as "boomerang quantization". An example of a boomerang quantization operation would take a value like `365.247` and quantize to an integer representation of `91`. The integer value of `91` is then rescaled back to `364` introducing a quantization error of `-1.247`.
+![Boomerang Quantize](./images/boomerangQuantize.png width=250)
 
 The quantization step uses a non-differentiable operation `round` that would normally break the training workflow by zeroing out the gradients. During quantization aware training, bypass the gradient calculations for non-differentiable operations using an identity function. The diagram below \[2\] shows how the identity function calculates the gradients for non-differentiable operations.
 
