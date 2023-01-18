@@ -6,3 +6,5 @@
 %  as the first layer and BatchNormalization layer as the second layer,
 %  return the adjusted weights and bias of the convolution layer
 %
+
+%  Copyright 2023 The Mathworks, Inc.

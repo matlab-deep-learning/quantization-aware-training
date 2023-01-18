@@ -27,3 +27,5 @@
 % 
 %    See also: DLARRAY, DLACCELERATE, EXTRACTDATA
 %
+
+%  Copyright 2023 The Mathworks, Inc.

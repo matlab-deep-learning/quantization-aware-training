@@ -1,8 +1,8 @@
 classdef IdentityTrainingLayer < nnet.layer.Layer
     %% IdentityTrainingLayer that returns the input as output
 
-    % Copyright 2022 The Mathworks, Inc.
-    
+    % Copyright 2023 The Mathworks, Inc.
+
     methods
 
         function obj = IdentityTrainingLayer(originalLayer)
@@ -13,7 +13,7 @@ classdef IdentityTrainingLayer < nnet.layer.Layer
 
 
         function X = predict(layer, X)
-            % No op - return the input as output 
+            % No op - return the input as output
         end
 
     end
