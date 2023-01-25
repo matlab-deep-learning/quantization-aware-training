@@ -16,12 +16,13 @@ Open and run the live script `QuantizationAwareTrainingWithMobilenetv2.mlx`.
 
 Additional files:
 
-- `QuantizedConvolutionBatchNormTrainingLayer`: Custom layer that implements quantization aware fused convolution-batch normalization layer
-- `QuantizedConvolutionTrainingLayer`: Custom layer unused in this example but can be applied to networks with convolution layers without batch normalization
+- `QuantizedConvolutionBatchNormTrainingLayer`: Custom layer that implements quantization aware fused convolution-batch normalization layer.
+- `QuantizedConvolutionTrainingLayer`: Custom layer unused in this example but can be applied to networks with convolution layers without batch normalization.
 - `IdentityTrainingLayer`: No-op layer that acts as a placeholder for batch normalization layers.
 - `quantizeToFloat`: Function to quantize the values to a floating point representation.
-- `bypassdlgradients`: Function to perform straight through estimation for a given operation.
-- `foldBatchNormalizationParameters`: function to calculate the adjusted weights and bias for dlnetwork that contains a convolution layer followed by a batch normalization layer.
+- `bypassdlgradients`: Function to perform straight through estimation for a given operation. The source of this function is obfuscated because of the use of internal packages.
+- `foldBatchNormalizationParameters`: function to calculate the adjusted weights and bias for dlnetwork that contains a convolution layer followed by a batch normalization layer. The source of this function is obfuscated because of the use of internal packages.
+- `CustomStraightThroughEstimator`: helper class used by `bypassdlgradients` and should not be used directly.
 
 ### Requirements
 
@@ -34,7 +35,7 @@ Additional files:
 This example focuses on the steps of a quantization workflow:
 
 - Replace quantizable layers in a floating-point network with quantization aware training layers.
-- Train with the quantzable training layers until reaching convergence.
+- Train with the quantizable training layers until reaching convergence.
 - Replace the quantizable training layers back with the original layers with updated learnables more robust to quantization.
 - Perform post-training quantization on this network to produce a fully-quantized int8 network.
 
@@ -47,8 +48,8 @@ As an example, `quantizeToFloat`  would take an input value `365.247` and calcul
 $$
 \begin{align}
 \hat x &=  quantizeToFloat\left(\mathrm{𝑥}\right) \\
-\; &= \mathrm{unquantize}\left(\mathrm{quantize}\left(\mathrm{𝑥}\right)\right) \\
-\; &= \mathrm{rescale}\cdot \mathrm{saturate}\left(\mathrm{round}\left(\frac{\mathrm{𝑥}}{\mathrm{scale}}\right)\right)
+\ &= \mathrm{unquantize}\left(\mathrm{quantize}\left(\mathrm{𝑥}\right)\right) \\
+\ &= \mathrm{rescale}\cdot \mathrm{saturate}\left(\mathrm{round}\left(\frac{\mathrm{𝑥}}{\mathrm{scale}}\right)\right)
 \end{align}
 $$
 
