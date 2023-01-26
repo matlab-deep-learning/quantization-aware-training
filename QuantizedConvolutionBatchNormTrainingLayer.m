@@ -43,7 +43,7 @@ classdef QuantizedConvolutionBatchNormTrainingLayer < nnet.layer.Layer & nnet.la
             % Quantize adjusted Weights to float.
             adjustedWeights = quantizeToFloat(adjustedWeights);
 
-            % Recrete the learnables table using the adjusted Weights and
+            % Recreate the learnables table using the adjusted Weights and
             % Bias.
             newLearnables = layer.Network.Learnables;
             newLearnables.Value{1} = adjustedWeights;
