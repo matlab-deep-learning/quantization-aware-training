@@ -27,7 +27,7 @@ Additional files:
 ### Requirements
 
 - [MATLAB](https://www.mathworks.com/products/matlab.html) version R2022b or later
-- [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html)
+- [Deep Learning Toolbox  &trade;](https://www.mathworks.com/products/deep-learning.html)
 - [Deep Learning Toolbox Model Quantization Library](https://www.mathworks.com/matlabcentral/fileexchange/74614-deep-learning-toolbox-model-quantization-library)
 
 ## About Quantization Aware Training
@@ -37,7 +37,7 @@ This example focuses on the steps of a quantization workflow:
 - Replace quantizable layers in a floating-point network with quantization aware training layers.
 - Train with the quantizable training layers until reaching convergence.
 - Replace the quantizable training layers back with the original layers with updated learnables more robust to quantization.
-- Perform post-training quantization on this network to produce a fully-quantized int8 network.
+- Perform post-training quantization on this network to produce a quantized int8 network.
 
 ![Quantization Aware Workflow Steps](./images/qat_workflow.png)
 
