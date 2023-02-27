@@ -1,5 +1,7 @@
 # Quantization Aware Training with MobileNet-v2
 
+[![View <File Exchange Title> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)
+
 This example shows how to perform quantization aware training as a way to prepare a network for quantization. Quantization aware training is a method that can help recover accuracy lost due to quantizing a network to use 8-bit scaled integer weights and biases. Networks like MobileNet-v2 are especially sensitive to quantization due to the significant variation in range of values of the weight tensor of the convolution and grouped convolution layers.
 
 This example shows how pre-processing a network with quantization aware training can produce a quantized network with accuracy on par with the original unquantized network. Note that the values in this table may differ slightly.
@@ -26,7 +28,7 @@ Additional files:
 
 ### Requirements
 
-- [MATLAB](https://www.mathworks.com/products/matlab.html) version R2022b or later
+- [MATLAB &reg;](https://www.mathworks.com/products/matlab.html) version R2022b or later
 - [Deep Learning Toolbox  &trade;](https://www.mathworks.com/products/deep-learning.html)
 - [Deep Learning Toolbox Model Quantization Library](https://www.mathworks.com/matlabcentral/fileexchange/74614-deep-learning-toolbox-model-quantization-library)
 
@@ -71,4 +73,3 @@ After training, the network returned from the `trainNetwork` function still has 
 
 Copyright 2023 The MathWorks, Inc.
 
-[![View Quantization-Aware-Training-with-Mobilenetv2 on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/74614-deep-learning-toolbox-model-quantization-library)<!---TODO: update link-->
