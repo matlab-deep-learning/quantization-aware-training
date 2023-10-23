@@ -1,5 +1,6 @@
 # Quantization Aware Training with MobileNet-v2
 
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=matlab-deep-learning/quantization-aware-training&file=QuantizationAwareTrainingWithMobilenetv2.mlx)
 [![View Quantization Aware Training with MobileNet-v2 on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/125420-quantization-aware-training-with-mobilenet-v2)
 
 This example shows how to perform quantization aware training as a way to prepare a network for quantization. Quantization aware training is a method that can help recover accuracy lost due to quantizing a network to use 8-bit scaled integer weights and biases. Networks like MobileNet-v2 are especially sensitive to quantization due to the significant variation in range of values of the weight tensor of the convolution and grouped convolution layers.
