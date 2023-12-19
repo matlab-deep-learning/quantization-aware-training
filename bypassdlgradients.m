@@ -1,5 +1,5 @@
 %  BYPASSDLGRADIENTS Bypass gradient for non-differentiable operations
-%    Y = bypassdlgradients(FUN, X, varargin) evaluates FUN(X, varargin)
+%    Y = bypassdlgradients(FUN, X) evaluates FUN(X)
 %    while overriding the derivitive calculation used during backward
 %    propogation to an identity function instead.
 % 
